@@ -30,9 +30,9 @@ void selection_sort(int *array, size_t size)
 			}
 		}
 		k = 0;
-		while (k < size - 2 && array[k] < array[k + 1])
+		while (k < size - 1 && array[k] < array[k + 1])
 			++k;
-		if (k == size - 2)
+		if (k == size - 1)
 			break;
 	}
 }
