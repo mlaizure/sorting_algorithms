@@ -15,7 +15,6 @@ void insertion_sort_list(listint_t **list)
 	while (1)
 	{
 		for (node = *list; node->next != NULL; node = node->next)
-		{
 			if (node->n > node->next->n)
 			{
 				origbig = node, origsmall = node->next;
@@ -40,7 +39,6 @@ void insertion_sort_list(listint_t **list)
 				print_list(*list);
 				break;
 			}
-		}
 		check = *list;
 		while (check->next && check->n < check->next->n)
 			check = check->next;
