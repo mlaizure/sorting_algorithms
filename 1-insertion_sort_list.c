@@ -12,6 +12,8 @@ void insertion_sort_list(listint_t **list)
 	listint_t *node = *list, *origbig, *origsmall, *newbig, *newsmall;
 	listint_t *first, *last, *check;
 
+	if (!list || !*list)
+		return;
 	while (1)
 	{
 		for (node = *list; node->next != NULL; node = node->next)
