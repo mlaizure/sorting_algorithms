@@ -44,7 +44,7 @@ void insertion_sort_list(listint_t **list)
 				break;
 			}
 		check = *list;
-		while (check->next && check->n < check->next->n)
+		while (check->next && check->n <= check->next->n)
 			check = check->next;
 		if (!check->next)
 			break;
