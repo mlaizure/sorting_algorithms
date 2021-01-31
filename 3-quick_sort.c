@@ -1,10 +1,15 @@
 #include "sort.h"
 
+int partition(int *array, int low, int high, size_t size);
+void real_quick(int *array, int low, int high, size_t size);
+
 /**
- *
- *
- *
- *
+ * partition - splits up elements into groups to be sorted and sorts
+ * @array: array with ints to be sorted
+ * @low: lowest array idx
+ * @high: highest array idx
+ * @size: size of array
+ *  Return: idx of partition
  */
 
 int partition(int *array, int low, int high, size_t size)
@@ -30,9 +35,19 @@ int partition(int *array, int low, int high, size_t size)
 	array[i + 1] = array[high];
 	array[high] = tmp;
 	if (i + 1 != high)
-	    print_array(array, size);
+		print_array(array, size);
 	return (i + 1);
 }
+
+
+/**
+ * real_quick - iterates sorting partitions
+ * @array: array with ints to be sorted
+ * @low: lowest array idx
+ * @high: highest array idx
+ * @size: size of array
+ *  Return: none
+ */
 
 void real_quick(int *array, int low, int high, size_t size)
 {
@@ -45,6 +60,14 @@ void real_quick(int *array, int low, int high, size_t size)
 		real_quick(array, part + 1, high, size);
 	}
 }
+
+
+/**
+ * quick_sort - wrapper function that calls sort functions
+ * @array: array with ints to be sorted
+ * @size: size of array
+ *  Return: none
+ */
 
 void quick_sort(int *array, size_t size)
 {
