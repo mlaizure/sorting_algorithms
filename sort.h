@@ -18,12 +18,20 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+
+/**
+ * enum kind_e - card deck
+ * @SPADE: spade
+ * @HEART: heart
+ * @CLUB: club
+ * @DIAMOND: diamond
+ */
 typedef enum kind_e
 {
 	SPADE = 0,
 	HEART,
 	CLUB,
-    DIAMOND
+	DIAMOND
 } kind_t;
 
 /**
