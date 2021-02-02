@@ -40,10 +40,8 @@ void radix_sort(int *array, size_t size)
 		max /= 10;
 	}
 
-	printf("Before for loop\n");
 	for (pass = 0; pass < NOP; pass++)
 	{
-		printf("Inside main for loop\n");
 		for (i = 0; i < 10; i++)
 			bucket_cnt[i] = 0;
 		for (i = 0; i < 10; i++)
