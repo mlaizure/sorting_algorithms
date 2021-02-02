@@ -32,6 +32,8 @@ void radix_sort(int *array, size_t size)
 	int bucket[20][20], bucket_cnt[20], i, j, k, r, NOP = 0, div = 1, max;
 	int pass, nsize = size;
 
+	if (!array || size < 2)
+		return;
 	max = get_max(array, size);
 
 	while (max > 0)
