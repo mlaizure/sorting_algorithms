@@ -29,7 +29,7 @@ int get_max(int *a, size_t size)
 
 void radix_sort(int *array, size_t size)
 {
-	int bucket[10][10], bucket_cnt[10], i, j, k, r, NOP = 0, div = 1, max;
+	int bucket[20][20], bucket_cnt[20], i, j, k, r, NOP = 0, div = 1, max;
 	int pass, nsize = size;
 
 	max = get_max(array, size);
@@ -42,16 +42,16 @@ void radix_sort(int *array, size_t size)
 
 	for (pass = 0; pass < NOP; pass++)
 	{
-		for (i = 0; i < 10; i++)
+		for (i = 0; i < 20; i++)
 			bucket_cnt[i] = 0;
-		for (i = 0; i < 10; i++)
+		for (i = 0; i < nsize; i++)
 		{
 			r = (array[i] / div) % 10;
 			bucket[r][bucket_cnt[r]] = array[i];
 			bucket_cnt[r] += 1;
 		}
 		i = 0;
-		for (k = 0; k < nsize; k++)
+		for (k = 0; k < 20; k++)
 		{
 			for (j = 0; j < bucket_cnt[k]; j++, i++)
 				array[i] = bucket[k][j];
